@@ -20,11 +20,11 @@ Het maakt gebruik van de open dataset van visitflanders.org (http://docs.opendat
 Gebruikers en beoordelingen van brouwerijen worden in een eigen database opgeslagen.
 
 
-## Project BRWZ geschiedenis/status
+## Project BREWZ geschiedenis/status
 
 16/01/2016 Project begint op papier vorm te krijgen en de initiele versie van de readme is gemaakt.
 
 
-## License
+## Project BREWZ License
 
 GNU GENERAL PUBLIC LICENSE
