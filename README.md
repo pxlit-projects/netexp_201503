@@ -22,6 +22,7 @@ Gebruikers en beoordelingen van brouwerijen worden in een eigen database opgesla
 
 ## Project BREWZ geschiedenis/status
 
+18/01/2016 Project/solution gemaakt en eerste versies van domain classes en datalayer.
 16/01/2016 Project begint op papier vorm te krijgen en de initiele versie van de readme is gemaakt.
 
 
