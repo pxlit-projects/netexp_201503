@@ -40,6 +40,8 @@ namespace BrewzDomain.DataLayer
             modelBuilder.Entity<Brewer>().Property(b => b.mixedFermentation).HasColumnName("mixed_fermentation");
             
         }
+
+        public System.Data.Entity.DbSet<BrewzDomain.Classes.Review> Reviews { get; set; }
     }
 
    
