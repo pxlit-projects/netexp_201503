@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewzDomain.DataLayer", "Br
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewzRestfullWebService", "BrewzRestfullWebService\BrewzRestfullWebService.csproj", "{D9BA7D93-6BAB-4A0A-83EB-15AC929A53E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewzWPF", "BrewzWPF\BrewzWPF.csproj", "{6CA50093-22C9-4BF7-862C-DB5B42860EC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D9BA7D93-6BAB-4A0A-83EB-15AC929A53E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9BA7D93-6BAB-4A0A-83EB-15AC929A53E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9BA7D93-6BAB-4A0A-83EB-15AC929A53E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA50093-22C9-4BF7-862C-DB5B42860EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA50093-22C9-4BF7-862C-DB5B42860EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA50093-22C9-4BF7-862C-DB5B42860EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA50093-22C9-4BF7-862C-DB5B42860EC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
