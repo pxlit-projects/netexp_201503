@@ -19,21 +19,21 @@ namespace BrewzDomain.Classes
 
         public string openingTimesEn { get; set; }
 
-        public Boolean individualsJoinGroupsNl { get; set; }
+        public string individualsJoinGroupsNl { get; set; }
 
-        public Boolean individualsJoinGroupsEn { get; set; }
+        public string individualsJoinGroupsEn { get; set; }
 
         public string imagesUrl { get; set; }
 
         public string videoUrl { get; set; }
 
-        public int topFermentation { get; set; }
+        public string topFermentation { get; set; }
 
-        public int bottomFermentation { get; set; }
+        public string bottomFermentation { get; set; }
 
-        public int spontaneousFermentation { get; set; }
+        public string spontaneousFermentation { get; set; }
 
-        public int mixedFermentation { get; set; }
+        public string mixedFermentation { get; set; }
         
         public List<Review> reviews { get; set; }
 
