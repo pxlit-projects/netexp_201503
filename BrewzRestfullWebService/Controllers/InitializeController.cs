@@ -15,7 +15,7 @@ namespace BrewzRestfullWebService.Controllers
         private BrewzContext db = new BrewzContext();
         private BrewersController controller = new BrewersController();
 
-        public IHttpActionResult getInitialzeBrewers()
+        public IHttpActionResult GetInitialzeBrewers()
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://opendata.visitflanders.org/tourist/activities/breweries.json");
             request.Method = "GET";
@@ -35,9 +35,9 @@ namespace BrewzRestfullWebService.Controllers
                 // Map each BrewerJson to Brewer
                 foreach (var brewerJson in brewerJsonList)
                 {
-                    Brewer brewer = mapBrewer(brewerJson);
-                    brewer.address = mapAddress(brewerJson);
-                    brewer.communication = mapCommunication(brewerJson);
+                    Brewer brewer = MapBrewer(brewerJson);
+                    brewer.address = MapAddress(brewerJson);
+                    brewer.communication = MapCommunication(brewerJson);
 
                     Brewer brewerFromDb = db.brewers.FirstOrDefault(b => b.name == brewer.name);
                     if (brewerFromDb == null)
@@ -55,7 +55,7 @@ namespace BrewzRestfullWebService.Controllers
             }
         }
 
-        private Brewer mapBrewer(BrewerJson brewerJson)
+        private Brewer MapBrewer(BrewerJson brewerJson)
         {
             Brewer brewer = new Brewer();
             brewer.name = brewerJson.name;
@@ -76,7 +76,7 @@ namespace BrewzRestfullWebService.Controllers
             return brewer;
         }
 
-        private Address mapAddress(BrewerJson brewerJson)
+        private Address MapAddress(BrewerJson brewerJson)
         {
             Address address = new Address();
             address.street = brewerJson.street;
@@ -87,7 +87,7 @@ namespace BrewzRestfullWebService.Controllers
             return address;
         }
 
-        private Communications mapCommunication(BrewerJson brewerJson)
+        private Communications MapCommunication(BrewerJson brewerJson)
         {
             Communications communication = new Communications();
             communication.email = brewerJson.email;

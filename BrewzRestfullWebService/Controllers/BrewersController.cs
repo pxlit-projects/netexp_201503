@@ -14,7 +14,7 @@ namespace BrewzRestfullWebService.Controllers
         private BrewzContext db = new BrewzContext();
 
         // GET: api/Brewers
-        public IQueryable<Brewer> Getbrewers()
+        public IQueryable<Brewer> GetBrewers()
         {
             return db.brewers;
         }
