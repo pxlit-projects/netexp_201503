@@ -38,10 +38,10 @@ namespace BrewzDomain.Classes
         public List<Review> reviews { get; set; }
 
         [Required]
-        public Communications communication { get; set; }
+        public virtual Communications communication { get; set; }
         
         [Required]
-        public Address address { get; set; }
+        public virtual Address address { get; set; }
 
     }
 }
