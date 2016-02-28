@@ -16,7 +16,8 @@ namespace BrewzRestfullWebService.Controllers
         // GET: api/Brewers
         public IQueryable<Brewer> GetBrewers()
         {
-            return db.brewers;
+            var brewer = db.Brewers.Include(g => g.Address).Include(g => g.Communication).Include(g => g.Reviews);
+            return brewer;
         }
 
         // GET: api/Brewers/5
