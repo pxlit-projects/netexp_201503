@@ -4,18 +4,14 @@ namespace BrewzDomain.Classes
 {
     public class User
     {
-        public int userId { get; set; }
+        public int UserId { get; set; }
 
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
 
-        public string lastName { get; set; }
-
-        public string login { get; set; }
-
-        public string email { get; set; }
-
-        public string password { get; set; }
-
-        public List<Review> reviews { get; set; }
+        public string LastName { get; set; }
+        
+        public string Email { get; set; }
+        
+        public List<Review> Reviews { get; set; }
     }
 }

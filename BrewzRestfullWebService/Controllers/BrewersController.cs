@@ -23,7 +23,7 @@ namespace BrewzRestfullWebService.Controllers
         [ResponseType(typeof(Brewer))]
         public IHttpActionResult GetBrewer(int id)
         {
-            Brewer brewer = db.brewers.Find(id);
+            Brewer brewer = db.Brewers.Find(id);
             if (brewer == null)
             {
                 return NotFound();
@@ -41,7 +41,7 @@ namespace BrewzRestfullWebService.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != brewer.brewerId)
+            if (id != brewer.BrewerId)
             {
                 return BadRequest();
             }
@@ -76,23 +76,23 @@ namespace BrewzRestfullWebService.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.brewers.Add(brewer);
+            db.Brewers.Add(brewer);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = brewer.brewerId }, brewer);
+            return CreatedAtRoute("DefaultApi", new { id = brewer.BrewerId }, brewer);
         }
 
         // DELETE: api/Brewers/5
         [ResponseType(typeof(Brewer))]
         public IHttpActionResult DeleteBrewer(int id)
         {
-            Brewer brewer = db.brewers.Find(id);
+            Brewer brewer = db.Brewers.Find(id);
             if (brewer == null)
             {
                 return NotFound();
             }
 
-            db.brewers.Remove(brewer);
+            db.Brewers.Remove(brewer);
             db.SaveChanges();
 
             return Ok(brewer);
@@ -109,7 +109,7 @@ namespace BrewzRestfullWebService.Controllers
 
         private bool BrewerExists(int id)
         {
-            return db.brewers.Count(e => e.brewerId == id) > 0;
+            return db.Brewers.Count(e => e.BrewerId == id) > 0;
         }
     }
 }

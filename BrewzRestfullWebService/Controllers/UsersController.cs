@@ -20,14 +20,14 @@ namespace BrewzRestfullWebService.Controllers
         // GET: api/Users
         public IQueryable<User> Getusers()
         {
-            return db.users;
+            return db.Users;
         }
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
         public IHttpActionResult GetUser(int id)
         {
-            User user = db.users.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -45,7 +45,7 @@ namespace BrewzRestfullWebService.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != user.userId)
+            if (id != user.UserId)
             {
                 return BadRequest();
             }
@@ -80,23 +80,23 @@ namespace BrewzRestfullWebService.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.users.Add(user);
+            db.Users.Add(user);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = user.userId }, user);
+            return CreatedAtRoute("DefaultApi", new { id = user.UserId }, user);
         }
 
         // DELETE: api/Users/5
         [ResponseType(typeof(User))]
         public IHttpActionResult DeleteUser(int id)
         {
-            User user = db.users.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            db.users.Remove(user);
+            db.Users.Remove(user);
             db.SaveChanges();
 
             return Ok(user);
@@ -113,7 +113,7 @@ namespace BrewzRestfullWebService.Controllers
 
         private bool UserExists(int id)
         {
-            return db.users.Count(e => e.userId == id) > 0;
+            return db.Users.Count(e => e.UserId == id) > 0;
         }
     }
 }

@@ -58,11 +58,11 @@
                 Foreground="Blue"
                 Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS"/>
 
-        <TextBox Grid.Column="2" Grid.Row="2" Name="BrewerNameTextBox" Text="{Binding name}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="3" Name="BrewerAddressTextBox" Text="{Binding Address.street}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="4" Name="BrewerPhoneTextBox" Text="{Binding Communications.phone}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="5" Name="BrewerEmailTextBox" Text="{Binding Communications.email}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="6" Name="BrewerDescriptionTextBox" Text="{Binding descriptionNl}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Name="BrewerNameTextBox" Text="{Binding Name}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="3" Name="BrewerAddressTextBox" Text="{Binding Address.Street}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="4" Name="BrewerPhoneTextBox" Text="{Binding Communications.Phone}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="5" Name="BrewerEmailTextBox" Text="{Binding Communications.Email}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="6" Name="BrewerDescriptionTextBox" Text="{Binding DescriptionNl}"></TextBox>
         <ListBox x:Name="listBox" Grid.Column="2" HorizontalAlignment="Left" Height="69" Grid.Row="7" VerticalAlignment="Top" Width="262"/>
 
     </Grid>

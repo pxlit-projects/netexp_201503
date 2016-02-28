@@ -45,7 +45,7 @@ namespace BrewzRestfullWebService.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != review.reviewId)
+            if (id != review.ReviewId)
             {
                 return BadRequest();
             }
@@ -83,7 +83,7 @@ namespace BrewzRestfullWebService.Controllers
             db.Reviews.Add(review);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = review.reviewId }, review);
+            return CreatedAtRoute("DefaultApi", new { id = review.ReviewId }, review);
         }
 
         // DELETE: api/Reviews/5
@@ -113,7 +113,7 @@ namespace BrewzRestfullWebService.Controllers
 
         private bool ReviewExists(int id)
         {
-            return db.Reviews.Count(e => e.reviewId == id) > 0;
+            return db.Reviews.Count(e => e.ReviewId == id) > 0;
         }
     }
 }

@@ -4,12 +4,12 @@ namespace BrewzDomain.Classes
 {
     public class Review
     {
-        public int reviewId { get; set; }
+        public int ReviewId { get; set; }
 
-        public DateTime reviewDate { get; set; }
+        public DateTime ReviewDate { get; set; }
 
-        public int reviewScore { get; set; }
+        public int ReviewScore { get; set; }
 
-        public string reviewComment { get; set; }
+        public string ReviewComment { get; set; }
     }
 }

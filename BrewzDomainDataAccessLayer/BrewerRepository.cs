@@ -20,7 +20,7 @@ namespace BrewzDomainDataAccessLayer
         }
         public Brewer GetBrewerById(int id)
         {
-            return db.brewers.Find(id);
+            return db.Brewers.Find(id);
         }
 
         public List<Brewer> GetBrewers()

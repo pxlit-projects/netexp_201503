@@ -7,41 +7,39 @@ namespace BrewzDomain.Classes
 {
     public class Brewer
     {
-        public int brewerId { get; set; }
+        public int BrewerId { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public string descriptionNl { get; set; }
+        public string DescriptionNl { get; set; }
 
-        public string descriptionEn { get; set; }
+        public string DescriptionEn { get; set; }
 
-        public string openingTimesNl { get; set; }
+        public string OpeningTimesNl { get; set; }
 
-        public string openingTimesEn { get; set; }
+        public string OpeningTimesEn { get; set; }
 
-        public string individualsJoinGroupsNl { get; set; }
+        public string IndividualsJoinGroupsNl { get; set; }
 
-        public string individualsJoinGroupsEn { get; set; }
+        public string IndividualsJoinGroupsEn { get; set; }
 
-        public string imagesUrl { get; set; }
+        public string ImagesUrl { get; set; }
 
-        public string videoUrl { get; set; }
+        public string VideoUrl { get; set; }
 
-        public string topFermentation { get; set; }
+        public string TopFermentation { get; set; }
 
-        public string bottomFermentation { get; set; }
+        public string BottomFermentation { get; set; }
 
-        public string spontaneousFermentation { get; set; }
+        public string SpontaneousFermentation { get; set; }
 
-        public string mixedFermentation { get; set; }
+        public string MixedFermentation { get; set; }
         
-        public List<Review> reviews { get; set; }
+        public List<Review> Reviews { get; set; }
 
-        [Required]
-        public virtual Communications communication { get; set; }
+        public Communications Communication { get; set; }
         
-        [Required]
-        public virtual Address address { get; set; }
+        public Address Address { get; set; }
 
     }
 }

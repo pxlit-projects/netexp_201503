@@ -2,16 +2,16 @@
 {
     public class Communications
     {
-        public int communicationsId { get; set; }
+        public int CommunicationsId { get; set; }
                
-        public string email { get; set; }
+        public string Email { get; set; }
 
-        public string phone { get; set; }
+        public string Phone { get; set; }
 
-        public string mobile { get; set; }
+        public string Mobile { get; set; }
 
-        public string fax { get; set; }
+        public string Fax { get; set; }
 
-        public string website { get; set; }
+        public string Website { get; set; }
     }
 }
