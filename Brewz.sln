@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewzWPF", "BrewzWPF\BrewzW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewzDomain.DataAccessLayer", "BrewzDomainDataAccessLayer\BrewzDomain.DataAccessLayer.csproj", "{1DF2C7DB-A0BC-455A-963C-A68AF32EC89A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewzDomain.JsonClasses", "BrewzDomain.JsonClasses\BrewzDomain.JsonClasses.csproj", "{246E4B64-F8A2-45C0-A4A0-5555880C83C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1DF2C7DB-A0BC-455A-963C-A68AF32EC89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DF2C7DB-A0BC-455A-963C-A68AF32EC89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DF2C7DB-A0BC-455A-963C-A68AF32EC89A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{246E4B64-F8A2-45C0-A4A0-5555880C83C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246E4B64-F8A2-45C0-A4A0-5555880C83C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246E4B64-F8A2-45C0-A4A0-5555880C83C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246E4B64-F8A2-45C0-A4A0-5555880C83C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
