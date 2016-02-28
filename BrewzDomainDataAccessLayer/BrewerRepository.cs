@@ -7,13 +7,14 @@ using BrewzDomain.Classes;
 using BrewzDomain.DataLayer;
 using System.Data.Entity;
 using BrewzRestfullWebService.Controllers;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace BrewzDomainDataAccessLayer
 {
     public class BrewerRepository : IBrewerRepository
     {
         private BrewzContext db = new BrewzContext();
-        private static List<Brewer> brewers;
 
         public BrewerRepository()
         {
@@ -25,15 +26,14 @@ namespace BrewzDomainDataAccessLayer
 
         public List<Brewer> GetBrewers()
         {
-            DbSet<Brewer> brewersDbSet = db.brewers;
-            List<Brewer> brewersList = brewersDbSet.ToList();
-            if (brewersList.Count == 0)
-            {
-                InitializeBrewersController initialize = new InitializeBrewersController();
-                initialize.GetInitialzeBrewers();
-                brewersList = brewersDbSet.ToList();
-            }
-            return brewersList;
+            var httpClient = new HttpClient();
+            string brewzUrl = Settings.BASEURL + "/api/Brewers";
+            var uri = new Uri(brewzUrl);
+
+            var response = Task.Run(() => httpClient.GetAsync(uri)).Result;
+            response.EnsureSuccessStatusCode();
+            var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+            return JsonConvert.DeserializeObject<List<Brewer>>(result);
         }
     }
 }
