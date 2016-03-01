@@ -27,13 +27,27 @@ namespace BrewzDomainDataAccessLayer
         public List<Brewer> GetBrewers()
         {
             var httpClient = new HttpClient();
-            string brewzUrl = Settings.BASEURL + "/api/Brewers";
-            var uri = new Uri(brewzUrl);
-
-            var response = Task.Run(() => httpClient.GetAsync(uri)).Result;
-            response.EnsureSuccessStatusCode();
-            var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
-            return JsonConvert.DeserializeObject<List<Brewer>>(result);
+            
+            try
+            {
+                // Try to get data online
+                string brewzUrl = Settings.ONLINEBASEEURL + "/api/Brewers";
+                var uri = new Uri(brewzUrl);
+                var response = Task.Run(() => httpClient.GetAsync(uri)).Result;
+                response.EnsureSuccessStatusCode();
+                var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+                return JsonConvert.DeserializeObject<List<Brewer>>(result);
+            }
+            catch (Exception ex)
+            {
+                // Error retrieving data online, getting data locally
+                string brewzUrl = Settings.OFFLINEBASEURL + "/api/Brewers";
+                var uri = new Uri(brewzUrl);
+                var response = Task.Run(() => httpClient.GetAsync(uri)).Result;
+                response.EnsureSuccessStatusCode();
+                var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+                return JsonConvert.DeserializeObject<List<Brewer>>(result);
+            }
         }
     }
 }
