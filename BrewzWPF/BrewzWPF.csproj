@@ -109,6 +109,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\BrewerDataService.cs" />
+    <Compile Include="ViewModel\BrewerDetailViewModel.cs" />
     <Compile Include="ViewModel\BrewerOverviewViewModel.cs" />
     <Compile Include="View\BrewerDetailView.xaml.cs">
       <DependentUpon>BrewerDetailView.xaml</DependentUpon>
