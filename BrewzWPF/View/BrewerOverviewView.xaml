@@ -26,7 +26,7 @@
         <Label Content="select brewery" 
                 FontSize="16" FontWeight="Bold"
                 Foreground="Blue"
-                Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS"/>
+                Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" Margin="138,3,0,5"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -73,7 +73,7 @@
                         <Label x:Name="label" Content="Details:" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Blue"/>
                         <Label Grid.Row="0" Grid.Column="1" Name="BrewerIdName" Content="{Binding SelectedBrewer.Name, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Comic Sans MS" Foreground="Blue"></Label>
                         <Label Grid.Row="1" Grid.Column="0" Content="Phone:" FontSize="14" FontFamily="Comic Sans MS" Foreground="Blue"></Label>
-                        <Label Grid.Row="1" Grid.Column="1" Name="BrewerAddressStreet" Content="{Binding SelectedBrewer.Communication.Phone}" HorizontalAlignment="Left" FontSize="14" FontFamily="Comic Sans MS" Foreground="Blue"></Label>
+                        <Label Grid.Row="1" Grid.Column="1" Name="BrewerPhone" Content="{Binding SelectedBrewer.Communication.Phone}" HorizontalAlignment="Left" FontSize="14" FontFamily="Comic Sans MS" Foreground="Blue"></Label>
                     </Grid>
                     <Grid Grid.Row="1">
                         <Grid.RowDefinitions>
