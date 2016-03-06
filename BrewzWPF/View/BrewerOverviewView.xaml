@@ -3,13 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BrewzWPF.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900"
+        DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=BrewerOverviewViewModel}"
         >
-    <Window.DataContext>
-        <local:BrewerOverviewViewModel/>
-    </Window.DataContext>
+   
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />

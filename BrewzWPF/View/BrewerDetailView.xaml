@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="DetailWindow" Height="350" Width="525">
+        Title="DetailWindow" Height="350" Width="525"
+        DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=BrewerDetailViewModel}" >
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
