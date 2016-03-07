@@ -4,6 +4,7 @@ namespace BrewzDomain.JsonClasses
 {
     public class BrewerJson
     {
+        [JsonProperty("name_nl")]
         public string Name { get; set; }
 
         public string Street { get; set; }
