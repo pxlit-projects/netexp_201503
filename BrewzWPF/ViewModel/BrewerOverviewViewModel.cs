@@ -3,6 +3,9 @@ using BrewzWPF.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
+using BrewzWPF.Utilities;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace BrewzWPF.ViewModel
 {
@@ -10,6 +13,9 @@ namespace BrewzWPF.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private BrewerDataService brewerDataService;
+        private DialogService dialogService = new DialogService();
+        public ICommand ViewDetailCommand { get; set; }
+
         private ObservableCollection<Brewer> brewers;
         public ObservableCollection<Brewer> Brewers
         {
@@ -28,6 +34,7 @@ namespace BrewzWPF.ViewModel
         {
             brewerDataService = new BrewerDataService();
             LoadData();
+            LoadCommands();
         }
 
         private Brewer selectedBrewer;
@@ -56,6 +63,25 @@ namespace BrewzWPF.ViewModel
         {
             List<Brewer> brewersList = brewerDataService.GetAllBrewers();
             Brewers = new ObservableCollection<Brewer>(brewersList);
+        }
+        private void LoadCommands()
+        {
+            ViewDetailCommand = new CustomCommand(ViewDetailBrewer, CanViewDetailBrewer);
+        }
+
+        private void ViewDetailBrewer(object obj)
+        {
+            Messenger.Default.Send<Brewer>(selectedBrewer);
+            dialogService.ShowDetailDialog();
+        }
+
+        private bool CanViewDetailBrewer(object obj)
+        {
+            if (SelectedBrewer != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
