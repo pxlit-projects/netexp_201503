@@ -24,7 +24,7 @@ namespace BrewzRestfullWebService.Controllers
         [ResponseType(typeof(Brewer))]
         public IHttpActionResult GetBrewer(int id)
         {
-            Brewer brewer = db.Brewers.Find(id);
+            Brewer brewer = db.Brewers.Include(g => g.Address).Include(g => g.Communication).Include(g => g.Reviews).SingleOrDefault(i => i.BrewerId == id);
             if (brewer == null)
             {
                 return NotFound();

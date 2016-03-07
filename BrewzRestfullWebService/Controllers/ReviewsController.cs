@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using BrewzDomain.Classes;
 using BrewzDomain.DataLayer;
+using Newtonsoft.Json.Linq;
 
 namespace BrewzRestfullWebService.Controllers
 {
@@ -73,17 +70,12 @@ namespace BrewzRestfullWebService.Controllers
 
         // POST: api/Reviews
         [ResponseType(typeof(Review))]
-        public IHttpActionResult PostReview(Review review)
+        public IHttpActionResult PostReview([FromBody] JObject value)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Reviews.Add(review);
+            Review newReview = value.ToObject<Review>();
+            db.Reviews.Add(newReview);
             db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = review.ReviewId }, review);
+            return CreatedAtRoute("DefaultApi", new { id = newReview.ReviewId }, newReview);
         }
 
         // DELETE: api/Reviews/5
