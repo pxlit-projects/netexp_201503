@@ -11,6 +11,7 @@ namespace BrewzWPF
     {
         private static BrewerOverviewViewModel brewerOverviewViewModel = new BrewerOverviewViewModel();
         private static BrewerDetailViewModel brewerDetailViewModel = new BrewerDetailViewModel();
+        private static AddReviewViewModel addReviewViewModel = new AddReviewViewModel();
 
         public static BrewerOverviewViewModel BrewerOverviewViewModel
         {
@@ -25,6 +26,14 @@ namespace BrewzWPF
             get
             {
                 return brewerDetailViewModel;
+            }
+        }
+
+        public static AddReviewViewModel AddReviewViewModel
+        {
+            get
+            {
+                return addReviewViewModel;
             }
         }
 
