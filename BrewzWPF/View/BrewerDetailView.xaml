@@ -4,66 +4,91 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="DetailWindow" Height="350" Width="525"
+        Title="DetailWindow" Height="550" Width="750"
         DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=BrewerDetailViewModel}" >
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="40" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="60" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="120" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Label Content="BREWZ breweries in Belgium" 
                 FontSize="20" FontWeight="Bold"
                 Foreground="Blue"
-                Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS"/>
+                Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" Height="38" Margin="34,11,113,11" Width="290"/>
         <Label Content="Details brewery: " 
                 FontSize="15" FontWeight="Bold"
                 Foreground="Blue"
-                Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS"/>
+                Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" Height="32" Margin="30,4,189,4" Width="138"/>
         <Label Content="Name: " 
                 FontSize="8" FontWeight="Medium"
                 Foreground="Blue"
-                Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS"/>
+                Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" Height="20" Margin="32,0,12,0" Width="36"/>
         <Label Content="Address: " 
                 FontSize="8" FontWeight="Medium"
                 Foreground="Blue"
-                Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS"/>
+                Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" Height="20" Margin="26,0,8,0" Width="46"/>
         <Label Content="Phone: " 
                 FontSize="8" FontWeight="Medium"
                 Foreground="Blue"
-                Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS"/>
+                Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" Height="20" Margin="32,0,12,0" Width="36"/>
         <Label Content="Email: " 
                 FontSize="8" FontWeight="Medium"
                 Foreground="Blue"
-                Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS"/>
+                Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" Height="20" Margin="32,0,14,0" Width="34"/>
         <Label Content="Description: " 
                 FontSize="8" FontWeight="Medium"
                 Foreground="Blue"
-                Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS"/>
+                Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" Height="21" Margin="20,0,2,0" Width="58"/>
         <Label Content="Reviews: " 
                 FontSize="8" FontWeight="Medium"
                 Foreground="Blue"
-                Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS"/>
+                Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" Height="21" Margin="26,10,10,0" Width="44"/>
 
-        <TextBox Grid.Column="2" Grid.Row="2" Name="BrewerNameTextBox" Text="{Binding SelectedBrewer.Name}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="3" Name="BrewerAddressTextBox" Text="{Binding SelectedBrewer.Address.Street}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="4" Name="BrewerPhoneTextBox" Text="{Binding SelectedBrewer.Communications.Phone}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="5" Name="BrewerEmailTextBox" Text="{Binding SelectedBrewer.Communications.Email}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="6" Name="BrewerDescriptionTextBox" Text="{Binding SelectedBrewer.DescriptionEn}"></TextBox>
-        <ListBox x:Name="listBox" Grid.Column="2" HorizontalAlignment="Left" Height="69" Grid.Row="7" VerticalAlignment="Top" Width="262"/>
+        <Label Grid.Column="2" Grid.Row="2" Name="BrewerNameTextBox" Content="{Binding SelectedBrewer.Name}" VerticalAlignment="Center" Margin="0,0,32,0"></Label>
+        <Label Grid.Column="2" Grid.Row="3" Name="BrewerAddressTextBox" Content="{Binding SelectedBrewer.Address.Street}" VerticalAlignment="Center" Margin="0,0,32,0"></Label>
+        <Label Grid.Column="2" Grid.Row="4" Name="BrewerPhoneTextBox" Content="{Binding SelectedBrewer.Communication.Phone}" VerticalAlignment="Center" Margin="0,0,32,0"></Label>
+        <Label Grid.Column="2" Grid.Row="5" Name="BrewerEmailTextBox" Content="{Binding SelectedBrewer.Communication.Email}" VerticalAlignment="Center" Margin="0,0,32,0"></Label>
+        <ScrollViewer Grid.Column="2" Grid.Row="6" Margin="0,0,32,10">
+            <TextBlock TextWrapping="Wrap"  Name="BrewerDescription" Text="{Binding SelectedBrewer.DescriptionEn}" Margin="10"  FontSize="14" FontFamily="Comic Sans MS" Foreground="Blue"></TextBlock>
+        </ScrollViewer>
+        <ListView Grid.Column="2" Grid.Row="7" ItemsSource="{Binding SelectedBrewer.Reviews}" Name="BrewersReviewListView" HorizontalAlignment="Left" Height="149" Margin="10,10,0,0" VerticalAlignment="Top" Width="425">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="DarkBlue" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Content="{Binding ReviewDate}" FontSize="12" FontWeight="Bold" Grid.Column="0" FontFamily="Comic Sans MS"  VerticalAlignment="Center"></Label>
+                            <Label Content="{Binding ReviewScore}" FontSize="12" Grid.Column="1" FontFamily="Comic Sans MS" VerticalAlignment="Center"></Label>
+                            <ScrollViewer Grid.Column="2">
+                                <TextBlock TextWrapping="Wrap"  Name="ReviewComment" Text="{Binding ReviewComment}" Margin="10"  FontSize="14" FontFamily="Comic Sans MS" Foreground="Blue"></TextBlock>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="addReviewButton" Content="Add review" Command="{Binding AddReviewCommand}" HorizontalAlignment="Left" Margin="480,20,0,0" Grid.Row="7" VerticalAlignment="Top" Width="70" Height="21" RenderTransformOrigin="6.324,0.578" Grid.Column="2"/>
 
     </Grid>
 </Window>
