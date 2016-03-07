@@ -3,6 +3,7 @@ namespace BrewzDomain.DataLayer.Migrations
     using Classes;
     using JsonClasses;
     using Services;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
 
@@ -25,9 +26,21 @@ namespace BrewzDomain.DataLayer.Migrations
                 Brewer brewer = MapBrewer(brewerJson);
                 brewer.Address = MapAddress(brewerJson);
                 brewer.Communication = MapCommunication(brewerJson);
+                Review review = new Review();
+                review.Brewer = brewer;
+                review.ReviewComment = "Eerste review";
+                review.ReviewDate = DateTime.Now;
+                review.ReviewScore = 6;
+                brewer.Reviews.Add(review);
                 brewerList.Add(brewer);
             }
             brewerList.ForEach(b => context.Brewers.AddOrUpdate(p => p.Name, b));
+            
+            User user = new User();
+            user.FirstName = "Bill";
+            user.LastName = "Gates";
+            user.Email = "bill.gates@hotmail.com";
+            context.Users.AddOrUpdate(u => u.Email, user);
             context.SaveChanges();
         }
 
