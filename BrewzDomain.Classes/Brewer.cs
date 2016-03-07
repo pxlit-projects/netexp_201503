@@ -7,6 +7,13 @@ namespace BrewzDomain.Classes
 {
     public class Brewer
     {
+        public Brewer()
+        {
+            Reviews = new List<Review>();
+            Communication = new Communications();
+            Address = new Address();
+        }
+
         public int BrewerId { get; set; }
 
         public string Name { get; set; }

@@ -11,5 +11,14 @@ namespace BrewzDomain.Classes
         public int ReviewScore { get; set; }
 
         public string ReviewComment { get; set; }
+
+        public int BrewerId { get; set; }
+
+        public Brewer Brewer { get; set; }
+
+        public int UserId { get; set; }
+
+        public User User { get; set; }
+     
     }
 }
