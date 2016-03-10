@@ -5,13 +5,13 @@ using System.Net.Http;
 
 namespace BrewzWPF.Services
 {
-    class BrewerDataService : IBrewerDataService
+    public class BrewerDataService : IBrewerDataService
     {
-        IBrewerRepository repository = new BrewerRepository();
+        IBrewerRepository repository;
 
-        public BrewerDataService()
+        public BrewerDataService(IBrewerRepository repository)
         {
-
+            this.repository = repository;
         }
 
         public List<Brewer> GetAllBrewers()

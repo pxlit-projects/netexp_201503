@@ -12,8 +12,8 @@ namespace BrewzWPF.ViewModel
     public class BrewerOverviewViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private BrewerDataService brewerDataService;
-        private DialogService dialogService = new DialogService();
+        private IBrewerDataService brewerDataService;
+        private IDialogService dialogService;
         public ICommand ViewDetailCommand { get; set; }
 
         private ObservableCollection<Brewer> brewers;
@@ -30,9 +30,10 @@ namespace BrewzWPF.ViewModel
             }
         }
 
-        public BrewerOverviewViewModel()
+        public BrewerOverviewViewModel(IBrewerDataService brewerDataService, IDialogService dialogService)
         {
-            brewerDataService = new BrewerDataService();
+            this.brewerDataService = brewerDataService;
+            this.dialogService = dialogService;
             LoadData();
             LoadCommands();
         }

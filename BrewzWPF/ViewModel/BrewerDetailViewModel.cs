@@ -10,8 +10,8 @@ namespace BrewzWPF.ViewModel
     public class BrewerDetailViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private BrewerDataService brewerDataService;
-        private DialogService dialogService = new DialogService();
+        private IBrewerDataService brewerDataService;
+        private IDialogService dialogService;
         public ICommand AddReviewCommand { get; set; }
 
         private Brewer selectedBrewer;
@@ -30,9 +30,10 @@ namespace BrewzWPF.ViewModel
             }
         }
        
-        public BrewerDetailViewModel()
+        public BrewerDetailViewModel(IBrewerDataService brewerDataService, IDialogService dialogService)
         {
-            brewerDataService = new BrewerDataService();
+            this.brewerDataService = brewerDataService;
+            this.dialogService = dialogService;
             AddReviewCommand = new CustomCommand(AddReviewView, CanAddReview);
             Messenger.Default.Register<Brewer>(this, OnBrewerReceived);
             Messenger.Default.Register<Review>(this, OnUpdateReviewListMessageReceived);

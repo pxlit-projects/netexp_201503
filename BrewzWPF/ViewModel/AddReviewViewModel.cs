@@ -11,7 +11,7 @@ namespace BrewzWPF.ViewModel
     public class AddReviewViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private BrewerDataService brewerDataService;
+        private IBrewerDataService brewerDataService;
 
         public ICommand SaveReviewCommand { get; set; }
 
@@ -31,9 +31,9 @@ namespace BrewzWPF.ViewModel
             }
         }
 
-        public AddReviewViewModel()
+        public AddReviewViewModel(IBrewerDataService brewerDataService)
         {
-            brewerDataService = new BrewerDataService();
+            this.brewerDataService = brewerDataService;
             SaveReviewCommand = new CustomCommand(SaveReviewView, CanSaveReview);
             Messenger.Default.Register<Review>(this, OnReviewReceived);
         }

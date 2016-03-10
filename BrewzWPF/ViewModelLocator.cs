@@ -1,4 +1,6 @@
-﻿using BrewzWPF.ViewModel;
+﻿using BrewzDomainDataAccessLayer;
+using BrewzWPF.Services;
+using BrewzWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,12 @@ namespace BrewzWPF
 {
     public class ViewModelLocator
     {
-        private static BrewerOverviewViewModel brewerOverviewViewModel = new BrewerOverviewViewModel();
-        private static BrewerDetailViewModel brewerDetailViewModel = new BrewerDetailViewModel();
-        private static AddReviewViewModel addReviewViewModel = new AddReviewViewModel();
+        private static IDialogService dialogService = new DialogService();
+        private static IBrewerDataService brewerDataService = new BrewerDataService(new BrewerRepository());
+
+        private static BrewerOverviewViewModel brewerOverviewViewModel = new BrewerOverviewViewModel(brewerDataService, dialogService);
+        private static BrewerDetailViewModel brewerDetailViewModel = new BrewerDetailViewModel(brewerDataService, dialogService);
+        private static AddReviewViewModel addReviewViewModel = new AddReviewViewModel(brewerDataService);
 
         public static BrewerOverviewViewModel BrewerOverviewViewModel
         {
